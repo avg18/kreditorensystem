@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_0fbd74r" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision" name="Score">
+    <extensionElements>
+      <biodi:bounds x="150" y="150" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" label="score_var">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>score_bez</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1ra7jfp">
+          <text>"score","anzahl_kreditoren"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1qjdx0p" label="score_nr">
+        <inputExpression id="LiteralExpression_0lzzeh9" typeRef="long">
+          <text>score</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="decision" name="output" typeRef="string">
+        <outputValues id="UnaryTests_0hvt99s">
+          <text>"kreditwuerdig","nicht kreditwuerdig"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0odpl43">
+        <description>"Score ist größer gleich 100"</description>
+        <inputEntry id="UnaryTests_004fl3q">
+          <text>"score"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r29po6">
+          <text>&gt;=1000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rebh57">
+          <text>"kreditwuerdig"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lpts7d">
+        <description>"Score ist zu niedrig"</description>
+        <inputEntry id="UnaryTests_1ajz9y9">
+          <text>"score"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dd76y5">
+          <text>&lt;1000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_073pvln">
+          <text>"nicht kreditwuerdig"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
