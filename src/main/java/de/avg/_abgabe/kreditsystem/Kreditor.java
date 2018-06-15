@@ -21,6 +21,18 @@ public class Kreditor {
 		this.score = score;
 	}
 
+	public Kreditor(String vorname, String nachname, Long kreditsumme, Long alter, String business, Long laufzeit,
+						   Long score) {
+		super();
+		this.vorname = vorname;
+		this.nachname = nachname;
+		this.kreditsumme = kreditsumme;
+		this.alter = alter;
+		this.business = business;
+		this.laufzeit = laufzeit;
+		this.score = score.intValue();
+	}
+
 	public String getVorname() {
 		return vorname;
 	}
@@ -69,8 +81,8 @@ public class Kreditor {
 		this.laufzeit = laufzeit;
 	}
 
-	public Integer getScore() {
-		return score;
+	public Long getScore(){
+		return score.longValue();
 	}
 
 	public void setScore(Integer score) {

@@ -1,9 +1,6 @@
 package de.avg._abgabe.kreditsystem;
 
 
-
-
-
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
@@ -28,9 +25,6 @@ public class LogData implements JavaDelegate {
 	    }
 	}
 	
-	
-	
-	
 	@Override
 	public void execute(DelegateExecution operator) throws Exception {
 		
@@ -39,17 +33,12 @@ public class LogData implements JavaDelegate {
 		 String nachname = (String) operator.getVariable("nachname");
 		 Long kreditsumme = (Long) operator.getVariable("kreditsumme");
 		 Long alter = (Long) operator.getVariable("alter");
-		 Integer score = (Integer) operator.getVariable("score");
+		 Long score = ((Integer) operator.getVariable("score")).longValue();
 		 Long laufzeit = (Long) operator.getVariable("laufzeit");
-		 
-		   
-		
-		
+
 		Kreditor k1=new Kreditor(vorname,  nachname,  kreditsumme,  alter,  business,  laufzeit,score);
 		
 		logger.info(k1.toString());
 	}
-	
-
 
 }

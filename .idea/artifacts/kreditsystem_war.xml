@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="kreditsystem:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="kreditsystem.war">
+      <element id="artifact" artifact-name="kreditsystem:war exploded" />
+    </root>
+  </artifact>
+</component>
